@@ -1156,11 +1156,47 @@ footer {
 }
 
 .backdrop .modal .modal-form .checkbox {
+  position: relative;
   font-family: 'Roboto';
 
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.01em;
+}
+
+.checkbox-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.check {
+  position: absolute;
+  left: 16px;
+  top: 4px;
+  margin-right: 8px;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 4px;
+}
+
+.checkbox-input:checked + .check {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+
+  background-image: url(../images/icon-check.svg);
+  background-size: contain;
+  background-origin: border-box;
 }
 
 .link-agreement {
