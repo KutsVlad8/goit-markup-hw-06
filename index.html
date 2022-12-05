@@ -419,8 +419,8 @@
 
         <div class="form">
           <p class="form-title">Підпишіться на розсилку</p>
-          <form action="">
-            <input type="email" name="email" placeholder="Email" class="input" />
+          <form action="follow-form">
+            <input type="email" name="email" placeholder="Email" class="follow-input" required />
             <button type="submit" class="btn-footer">
               Підписатися
               <svg class="icon-send">
@@ -444,21 +444,67 @@
         <p class="modal-title">Залиште свої дані, ми вам передзвонимо</p>
 
         <form action="" class="modal-form">
-          <label class="form-label"
-            >Ім'я
-            <input type="text" name="user-name" />
+          <label class="form-label">
+            <span class="label">Ім'я</span>
+            <svg class="form-icon">
+              <use href="./images/symbol-defs-opt.svg#icon-person"></use>
+            </svg>
+            <input
+              class="form-input"
+              type="text"
+              name="user-name"
+              required
+              minlength="3"
+              autocomplete="off"
+              placeholder=" "
+            />
           </label>
 
-          <label class="form-label">Телефон <input type="tel" name="tel" /></label>
-
           <label class="form-label"
-            >Пошта
-            <input type="email" name="email" />
+            ><span class="label">Телефон</span>
+            <svg class="form-icon">
+              <use href="./images/symbol-defs-opt.svg#icon-phone-black"></use>
+            </svg>
+
+            <input
+              class="form-input"
+              type="tel"
+              name="tel"
+              required
+              maxlength="12"
+              autocomplete="off"
+              placeholder=" "
+            />
           </label>
 
           <label class="form-label"
-            >Коментар
-            <textarea name="comment" cols="30" rows="10"></textarea>
+            ><span class="label">Пошта </span>
+            <svg class="form-icon">
+              <use href="./images/symbol-defs-opt.svg#icon-email"></use></svg
+            ><input
+              class="form-input"
+              type="email"
+              name="email"
+              required
+              autocomplete="off"
+              placeholder=" "
+            />
+          </label>
+
+          <label class="form-label"
+            ><span class="label">Коментар</span>
+            <textarea
+              class="form-textarea"
+              name="comment"
+              cols="30"
+              rows="10"
+              placeholder="Введіть текст"
+            ></textarea>
+          </label>
+
+          <label class="checkbox">
+            <input type="checkbox" required />
+            Погоджуюся з розсилкою та приймаю <a href="" class="link-agreement">Умови договору</a>
           </label>
         </form>
         <button type="submit" class="modal-btn">Відправити</button>
