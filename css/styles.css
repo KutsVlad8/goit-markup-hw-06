@@ -10,6 +10,7 @@
 /* цвет фона команда #F5F4FA;*/
 /* цвет иконок #AFB1B8 */
 /* цвет фона кнопок  #f5f4fa */
+/* цвет переменной кнопок #188ce8 */
 /* цвет фона футер #2f303a */
 /* цвет рамки хедера  #ececec*/
 /* цвет рамки карты портфолио #eeeeee */
@@ -33,6 +34,7 @@
   --background-color-team: #f5f4fa;
   --background-footer: #2f303a;
   --background-color-button: #f5f4fa;
+  --background-color-change-button: #188ce8;
   --border-color-header: #ececec;
   --border-color-card: #eeeeee;
   --border-client-color: #afb1b8;
@@ -155,7 +157,7 @@ header .logo {
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transform: scalex(0);
   /* opacity: 0; */
-  background-color: #ffffff;
+  background-color: var(--background-color);
 }
 
 .site-nav .link:hover::after,
@@ -323,6 +325,10 @@ header .logo {
 }
 .section-greeting .button:hover,
 .section-greeting .button:focus {
+  background-color: var(--background-color-change-button);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+  border-radius: 4px;
 }
 
 /* особенности */
@@ -373,7 +379,7 @@ header .logo {
   width: 270px;
   height: 120px;
 
-  background-color: #f5f4fa;
+  background-color: var(--background-color-team);
   border-radius: 4px;
 }
 
@@ -443,7 +449,6 @@ header .logo {
 
   margin: 0;
 
-  font-family: 'Roboto';
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -906,15 +911,14 @@ footer {
 }
 
 .footer-container .form {
-  margin-left: 93px;
+  margin-left: auto;
 
   min-width: 570px;
-  height: 86px;
 }
 
 .footer .form-title {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 
   font-weight: 700;
   font-size: 14px;
@@ -948,6 +952,11 @@ footer {
   max-width: 200px;
   max-height: 50px;
 
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
   color: var(--text-change-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -955,6 +964,14 @@ footer {
   border-radius: 4px;
 
   cursor: pointer;
+}
+
+.footer-container .form .btn-footer:hover,
+.footer-container .form .btn-footer:focus {
+  background-color: var(--background-color-change-button);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
+  border-radius: 4px;
 }
 
 .footer-container .form .icon-send {
@@ -1000,8 +1017,8 @@ footer {
   transform: translate(-50%, -50%) scale(1);
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 
-  max-width: 528px;
-  max-height: 581px;
+  width: 528px;
+  height: 581px;
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -1042,7 +1059,8 @@ footer {
 }
 
 .backdrop .modal .modal-title {
-  font-family: 'Roboto';
+  margin-top: 0;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -1056,8 +1074,7 @@ footer {
   flex-direction: column;
   margin-bottom: 30px;
 
-  width: 448px;
-  height: 386px;
+  width: 100%;
 }
 
 .backdrop .modal .modal-form .form-label {
@@ -1065,10 +1082,13 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
+  margin-bottom: 10px;
 }
 
 .label {
-  font-family: 'Roboto';
+  margin-bottom: 4px;
+
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -1084,12 +1104,12 @@ footer {
 .form-icon {
   position: absolute;
   left: 12px;
-  top: 42%;
+  top: 50%;
 
   width: 18px;
   height: 18px;
 
-  fill: black;
+  fill: var(--primary-heading-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1098,8 +1118,6 @@ footer {
 }
 
 .backdrop .modal .modal-form .form-label .form-input {
-  margin-bottom: 10px;
-  margin-top: 4px;
   padding: 11px 40px;
 
   width: 100%;
@@ -1137,8 +1155,6 @@ footer {
 }
 
 .form-textarea::placeholder {
-  font-family: 'Roboto';
-
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
@@ -1164,7 +1180,6 @@ footer {
 
 .backdrop .modal .modal-form .checkbox {
   position: relative;
-  font-family: 'Roboto';
 
   font-size: 14px;
   line-height: 1.71;
@@ -1228,8 +1243,8 @@ footer {
   margin-right: auto;
   padding: 10px 28px;
 
-  max-width: 200px;
-  max-height: 50px;
+  width: 200px;
+  height: 50px;
 
   color: var(--text-change-color);
   background-color: var(--accent-color);
@@ -1238,4 +1253,12 @@ footer {
   border-radius: 4px;
 
   cursor: pointer;
+}
+
+.backdrop .modal .modal-btn:hover,
+.backdrop .modal .modal-btn:focus {
+  background-color: var(--background-color-change-button);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
