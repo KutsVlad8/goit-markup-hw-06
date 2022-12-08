@@ -1080,7 +1080,6 @@ footer {
 .backdrop .modal .modal-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
 
   width: 100%;
 }
@@ -1132,7 +1131,8 @@ footer {
   height: 40px;
 }
 
-.form-input:focus {
+.form-input:focus,
+.form-input:hover {
   outline: 1px solid var(--accent-color);
   border-radius: 4px;
 }
@@ -1170,7 +1170,8 @@ footer {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.form-textarea:focus {
+.form-textarea:focus,
+.form-textarea:hover {
   border-radius: 4px;
   outline: 1px solid var(--accent-color);
 }
@@ -1187,7 +1188,11 @@ footer {
 }
 
 .backdrop .modal .modal-form .checkbox {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 30px;
 
   font-size: 14px;
   line-height: 1.71;
@@ -1195,7 +1200,6 @@ footer {
 }
 
 .checkbox-input {
-  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -1209,7 +1213,6 @@ footer {
 }
 
 .check {
-  position: absolute;
   left: 16px;
   top: 4px;
   margin-right: 8px;
@@ -1243,6 +1246,7 @@ footer {
 }
 
 .link-agreement {
+  margin-left: 5px;
   color: var(--accent-color);
 }
 
@@ -1253,6 +1257,12 @@ footer {
 
   width: 200px;
   height: 50px;
+
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
 
   color: var(--text-change-color);
   background-color: var(--accent-color);
